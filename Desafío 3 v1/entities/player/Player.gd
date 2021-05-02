@@ -16,7 +16,6 @@ func initialize(projectile_container):
 	self.projectile_container = projectile_container
 	cannon.projectile_container = projectile_container
 
-#func _physics_process(delta):
 func get_input():	
 	
 	# Cannon rotation

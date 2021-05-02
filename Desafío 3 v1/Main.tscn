@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://entities/enviroment/Floor.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/enviroment/Sphere.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/enviroment/Background.gd" type="Script" id=7]
+[ext_resource path="res://entities/enviroment/Block.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/enviroment/Stairs.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node"]
 script = ExtResource( 3 )
@@ -42,3 +44,9 @@ position = Vector2( 309.394, 266.574 )
 
 [node name="Sphere3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 224.445, 170.298 )
+
+[node name="Block" parent="." instance=ExtResource( 8 )]
+position = Vector2( 549.954, 468.529 )
+
+[node name="Stairs" parent="." instance=ExtResource( 9 )]
+position = Vector2( 11.2246, -105.511 )
