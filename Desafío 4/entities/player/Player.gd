@@ -81,7 +81,9 @@ func _play_animation(animation:String):
 
 func notify_hit():
 	print("I'm player and imma die")
-	call_deferred("_remove")
+	player_animation.stop()
+	player_animation.play("dead")
+	#call_deferred("_remove")
 
 func _remove():
 	set_physics_process(false)

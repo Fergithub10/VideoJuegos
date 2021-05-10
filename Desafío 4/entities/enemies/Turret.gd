@@ -9,6 +9,8 @@ export (PackedScene) var projectile_scene
 var target
 var projectile_container
 
+onready var body_cat = $Body
+
 func _ready():
 	fire_timer.connect("timeout", self, "fire")
 	set_physics_process(false)
@@ -20,6 +22,7 @@ func initialize(container, turret_pos, projectile_container):
 
 func fire():
 	if target != null:
+		body_cat.play("jump")
 		var proj_instance = projectile_scene.instance()
 		if projectile_container == null:
 			projectile_container = get_parent()
@@ -36,8 +39,11 @@ func _physics_process(delta):
 
 
 func notify_hit():
+	if body_cat.animation == "dead":
+		return
+	body_cat.play("dead")
 	print("I'm turret and imma die")
-	call_deferred("_remove")
+	#call_deferred("_remove")
 
 func _remove():
 	get_parent().remove_child(self)

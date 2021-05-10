@@ -71,7 +71,7 @@ tracks/0/keys = {
 "values": [ 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "walk_inv"
 length = 1.95
 tracks/0/type = "value"
@@ -111,12 +111,12 @@ tracks/2/keys = {
 "values": [  ]
 }
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 6752, 3008 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 17.7461, 77.0562 )
 
 [node name="Player" type="KinematicBody2D"]
@@ -129,15 +129,15 @@ anims/dead = SubResource( 1 )
 anims/idle = SubResource( 2 )
 anims/jump = SubResource( 3 )
 anims/walk = SubResource( 4 )
-anims/walk_inv = SubResource( 7 )
+anims/walk_inv = SubResource( 5 )
 
 [node name="Body" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
-texture = SubResource( 5 )
+texture = SubResource( 6 )
 offset = Vector2( 50, 0 )
 vframes = 8
 hframes = 15
-frame = 74
+frame = 30
 
 [node name="Cannon" type="Sprite" parent="."]
 position = Vector2( -0.0635071, 0.165405 )
@@ -149,4 +149,4 @@ position = Vector2( 15, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.5874, -1.5874 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
