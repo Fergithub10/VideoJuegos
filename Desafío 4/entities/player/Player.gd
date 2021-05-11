@@ -41,7 +41,7 @@ func get_input():
 	var jump = Input.is_action_just_pressed('jump')
 	if jump and is_on_floor():
 		velocity.y -= jump_speed
-		player_animation.stop()
+		#player_animation.stop()
 		#_play_animation("jump")
 
 	#Visualización horizontal.
@@ -51,10 +51,9 @@ func get_input():
 		# Verifico la dirección del personaje.
 		if (velocity.x > 0):
 			body.flip_h = false # La dirección del personaje es hacia adelante. 
-			_play_animation('walk')
 		else:
 			body.flip_h = true # La dirección del personaje es hacia atrás. 
-			_play_animation('walk')		
+		_play_animation('walk')		
 	else:
 		velocity.x = lerp(velocity.x, 0, FRICTION_WEIGHT) if abs(velocity.x) > 1 else 0
 		player_animation.play("idle") # Deja la visualización del personaje en Idle (inactivo)

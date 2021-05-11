@@ -22,7 +22,7 @@ func initialize(container, turret_pos, projectile_container):
 
 func fire():
 	if target != null:
-		body_cat.play("jump")
+		#body_cat.play("jump")
 		var proj_instance = projectile_scene.instance()
 		if projectile_container == null:
 			projectile_container = get_parent()
